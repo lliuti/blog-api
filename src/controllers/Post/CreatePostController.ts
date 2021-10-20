@@ -6,8 +6,7 @@ class CreatePostController {
   async handle(request: Request, response: Response) {
     const { title, description, content, tags }: IPostDTO = request.body;
 
-    // const { user_id } = request;
-    const user_id = "2c1b314a-1f4d-4826-9b78-1822e28d195c";
+    const { user_id } = request;
 
     const service = new CreatePostService();
     try {
