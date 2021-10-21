@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { GetLastThreePostsService } from "../../services/Post/GetLastThreePostsService";
+import { GetRecentPostsService } from "../../services/Post/GetRecentPostsService";
 
-class GetLastThreePostsController {
+class GetRecentPostsController {
   async handle(request: Request, response: Response) {
-    const service = new GetLastThreePostsService();
+    const service = new GetRecentPostsService();
 
     try {
       const result = await service.execute();
@@ -14,4 +14,4 @@ class GetLastThreePostsController {
   }
 }
 
-export { GetLastThreePostsController };
+export { GetRecentPostsController };

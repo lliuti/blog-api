@@ -1,7 +1,7 @@
 import { IPostDTO } from "../../dtos/IPostDTO";
 import { prismaClient } from "../../prisma";
 
-class GetLastThreePostsService {
+class GetRecentPostsService {
   async execute(): Promise<IPostDTO[]> {
     const posts = await prismaClient.post.findMany({
       orderBy: {
@@ -14,4 +14,4 @@ class GetLastThreePostsService {
   }
 }
 
-export { GetLastThreePostsService };
+export { GetRecentPostsService };
