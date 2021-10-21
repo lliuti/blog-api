@@ -21,6 +21,14 @@ class CreatePostService {
         tags: tags,
         author_id: user_id,
       },
+      include: {
+        author: {
+          select: {
+            name: true,
+            email: true,
+          },
+        },
+      },
     });
 
     return post;
