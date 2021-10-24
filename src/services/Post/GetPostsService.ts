@@ -7,7 +7,7 @@ class GetPostsService {
       orderBy: {
         created_at: "desc",
       },
-      skip: 3,
+      skip: 4,
     });
 
     return posts;
