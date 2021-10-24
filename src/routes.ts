@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { CreatePostController } from "./controllers/Post/CreatePostController";
+import { GetLastPostController } from "./controllers/Post/GetLastPostController";
 import { GetPostsController } from "./controllers/Post/GetPostsController";
 import { GetRecentPostsController } from "./controllers/Post/GetRecentPostsController";
 import { AuthenticateUserController } from "./controllers/User/AuthenticateUserController";
@@ -22,6 +23,7 @@ router.get("/github", (request, response) => {
 
 router.post("/posts", ensureAuthenticated, new CreatePostController().handle);
 router.get("/posts/recent", new GetRecentPostsController().handle);
+router.get("/posts/last", new GetLastPostController().handle);
 router.get("/posts", new GetPostsController().handle);
 
 export { router };
