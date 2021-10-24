@@ -8,7 +8,12 @@ class GetRecentPostsService {
         created_at: "desc",
       },
       take: 3,
+      skip: 1,
     });
+
+    if (!posts) {
+      throw new Error("Not enough posts registered!");
+    }
 
     return posts;
   }
