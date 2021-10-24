@@ -25,7 +25,7 @@ class CreatePostService {
         author: {
           select: {
             name: true,
-            email: true,
+            github_username: true,
           },
         },
       },
