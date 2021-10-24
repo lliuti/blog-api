@@ -25,9 +25,9 @@ model Post {
   author      User     @relation(fields: [author_id], references: [id])
   author_id   String
   title       String   @unique
-  description String
+  description String?
   content     String
-  tags        String
+  tags        String?
   created_at  DateTime @default(now())
 
   @@map("posts")
